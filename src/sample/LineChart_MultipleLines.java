@@ -29,24 +29,24 @@ public class LineChart_MultipleLines extends Application {
             File myObj = new File("myfile.txt");
             Scanner myReader = new Scanner(myObj);
 
-            String sep2= "',";
+            String sep2 = "',";
             int sep4;
 
             String sepLocation = ", '";
-            String sepLocation2= "')";
-            int sepLoc=0;
-            int sepLoc2=0;
+            String sepLocation2 = "')";
+            int sepLoc = 0;
+            int sepLoc2 = 0;
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
 
-                sep4=data.indexOf(sep2);
-                sepLoc=data.lastIndexOf(sepLocation);
-                sepLoc2= data.lastIndexOf(sepLocation2);
+                sep4 = data.indexOf(sep2);
+                sepLoc = data.lastIndexOf(sepLocation);
+                sepLoc2 = data.lastIndexOf(sepLocation2);
 
-                temperatureVector.add(Double.parseDouble(data.substring(2,sep4)));
-                locationVector.add(data.substring(sepLoc,sepLoc2));
+                temperatureVector.add(Double.parseDouble(data.substring(2, sep4)));
+                locationVector.add(data.substring(sepLoc, sepLoc2));
 
-               // System.out.println(locationVector);
+                // System.out.println(locationVector);
             }
             myReader.close();
 
@@ -54,7 +54,6 @@ public class LineChart_MultipleLines extends Application {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-
 
 
         //Defining the x an y axes
@@ -65,6 +64,7 @@ public class LineChart_MultipleLines extends Application {
         yAxis.setLabel("Temperature(°C)");
         //Creating a line chart
         LineChart<Number, Number> linechart = new LineChart<Number, Number>(xAxis, yAxis);
+
         //Preparing the data points for the line1
 
         // XYChart.Series series1 = new XYChart.Series();
@@ -73,44 +73,41 @@ public class LineChart_MultipleLines extends Application {
         XYChart.Series series3 = new XYChart.Series();
         XYChart.Series series4 = new XYChart.Series();
 
-        int counter=0;
-        int counter1=0;
-        int counter2=0;
-        int counter3=0;
+        int counter = 0;
+        int counter1 = 0;
+        int counter2 = 0;
+        int counter3 = 0;
 
-        for (int i=0; i<=50; i++) {
+        for (int i = 0; i <= 50; i++) {
             if (locationVector.get(i).contains("pysaxion")) {
-                series1.getData().add(new XYChart.Data(counter,temperatureVector.get(i)) );
+                series1.getData().add(new XYChart.Data(counter, temperatureVector.get(i)));
 //                series1.getData().add(new XYChart.Data("Ian", temperatureVector.get(0)));
 //                series1.getData().add(new XYChart.Data("feb", 8.9));
 //                series1.getData().add(new XYChart.Data("Mar", temperatureVector.get(2)));
                 counter++;
-            }else
-            if (locationVector.get(i).contains("pygronau")) {
-                series2.getData().add(new XYChart.Data(counter1,temperatureVector.get(i)) );
+            } else if (locationVector.get(i).contains("pygronau")) {
+                series2.getData().add(new XYChart.Data(counter1, temperatureVector.get(i)));
 
-//                series2.getData().add(new XYChart.Data(counter, temperatureVector.get(1)));
-//                series2.getData().add(new XYChart.Data(counter, 0.8));
-//                series2.getData().add(new XYChart.Data(counter, 3));
+//                series22.getData().add(new XYChart.Data(counter, temperatureVector.get(1)));
+//                series22.getData().add(new XYChart.Data(counter, 0.8));
+//                series22.getData().add(new XYChart.Data(counter, 3));
                 counter1++;
-            }else
-            if (locationVector.get(i).contains("pywierden")) {
-                series3.getData().add(new XYChart.Data(counter2,temperatureVector.get(i)) );
+            } else if (locationVector.get(i).contains("pywierden")) {
+                series3.getData().add(new XYChart.Data(counter2, temperatureVector.get(i)));
 
-//                series3.getData().add(new XYChart.Data(counter, temperatureVector.get(2)));
-//                series3.getData().add(new XYChart.Data(counter, 4.2));
-//                series3.getData().add(new XYChart.Data(counter, 5.7));
-                    counter2++;
-            }else
-            if (locationVector.get(i).contains("pygarage")) {
-                series4.getData().add(new XYChart.Data(counter3,temperatureVector.get(i)) );
+//                series33.getData().add(new XYChart.Data(counter, temperatureVector.get(2)));
+//                series33.getData().add(new XYChart.Data(counter, 4.2));
+//                series33.getData().add(new XYChart.Data(counter, 5.7));
+                counter2++;
+            } else if (locationVector.get(i).contains("pygarage")) {
+                series4.getData().add(new XYChart.Data(counter3, temperatureVector.get(i)));
 
 //                series4.getData().add(new XYChart.Data(counter, -4));
 //                series4.getData().add(new XYChart.Data(counter, -2.5));
 //                series4.getData().add(new XYChart.Data(counter, -9.3));
-                    counter3++;
+                counter3++;
             }
-           // counter++;
+            // counter++;
         }
 
         series1.setName("pysaxion");
@@ -131,5 +128,9 @@ public class LineChart_MultipleLines extends Application {
         stage.setScene(scene);
         stage.show();
 
+
     }
+
 }
+
+
