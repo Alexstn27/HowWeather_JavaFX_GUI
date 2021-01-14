@@ -9,10 +9,11 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChartClass {
 
-    public void makeChart(ArrayList<Double> myVector) {
+    public void makeChart(List<Double> myVector) {
 
         Stage stage = new Stage();
         ReadFile readFile = new ReadFile();
