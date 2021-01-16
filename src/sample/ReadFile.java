@@ -21,15 +21,12 @@ public class ReadFile {
     }
 
     public void read() {
-
         String listingFolder = "/Users/stanalexandru/Downloads/Project Engineering Python/myfiledata.txt";
         File f = new File(listingFolder);
 
         try {
             Scanner read = new Scanner(f);
-
             String[] helper;
-
             double temp;
             double light;
             double pressure;
@@ -50,7 +47,6 @@ public class ReadFile {
                 pressureVector.add(pressure);
             }
             read.close();
-
         } catch (Exception e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

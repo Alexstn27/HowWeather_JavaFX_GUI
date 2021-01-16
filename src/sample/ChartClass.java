@@ -39,7 +39,7 @@ public class ChartClass {
         //Creating a line chart
         LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
 
-        //Preparing the data points for the line1
+        //Preparing the data points for the line
 
         XYChart.Series series1 = new XYChart.Series();
         XYChart.Series series2 = new XYChart.Series();
