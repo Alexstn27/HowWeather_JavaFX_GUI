@@ -13,6 +13,12 @@ import java.util.List;
 
 public class ChartClass {
 
+    /******************************
+     * This function is creating the graph
+     * @param myVector
+     * The parameter that will be provided
+     * will be one of the specific ArrayLists
+     *****************************/
     public void makeChart(List<Double> myVector) {
 
         Stage stage = new Stage();
@@ -24,8 +30,8 @@ public class ChartClass {
         //Defining the x an y axes
         NumberAxis xAxis = new NumberAxis();
         NumberAxis yAxis = new NumberAxis();
-        //Setting labels for the axes
 
+        //Setting labels for the axes
         xAxis.setLabel("Most recent data");
 
         if (myVector.equals(readFile.getTemperatureVector())) {

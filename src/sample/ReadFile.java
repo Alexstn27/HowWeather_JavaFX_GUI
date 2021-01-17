@@ -20,6 +20,11 @@ public class ReadFile {
         locationVector = new ArrayList<>();
     }
 
+    /******************************************************************
+     * This function reads line by line from the txt file provided by
+     * the python program and at the same time each line is split into
+     * 4 variables which will populate the specific ArrayList
+     *****************************************************************/
     public void read() {
         String listingFolder = "/Users/stanalexandru/Downloads/Project Engineering Python/myfiledata.txt";
         File f = new File(listingFolder);
@@ -53,6 +58,7 @@ public class ReadFile {
         }
     }
 
+    //Getters for ArrayLists
     public List<Double> getTemperatureVector() {
         return temperatureVector;
     }

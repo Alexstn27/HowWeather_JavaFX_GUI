@@ -24,15 +24,18 @@ public class Main extends Application {
         xy.read();
         ChartClass chartClass = new ChartClass();
 
+        //preparing the options menu
         primaryStage.setTitle("Menu");
         MenuItem menuItem1 = new MenuItem("Temperature");
         MenuItem menuItem2 = new MenuItem("Light");
         MenuItem menuItem3 = new MenuItem("Pressure");
 
+        //adding the logo
         FileInputStream inputStream = new FileInputStream("GUI_image1.jpeg");
-
         Image image = new Image(inputStream);
         ImageView imageView = new ImageView(image);
+
+        //creating the buttons and set the action when a button is pressed
 
         MenuButton menuButton = new MenuButton("Options", null, menuItem1, menuItem2, menuItem3);
         Font font = Font.font("Courier New", FontWeight.BLACK, 36);
